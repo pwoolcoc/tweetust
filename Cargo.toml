@@ -1,16 +1,20 @@
 [package]
 name = "tweetust"
 version = "0.1.0"
-authors = ["azyobuzin <azyobuzin@users.sourceforge.jp>"]
-description = "Experimental Twitter Library"
-documentation = "http://azyobuzin.github.io/tweetust/tweetust/"
-repository = "https://github.com/azyobuzin/tweetust"
+authors = ["azyobuzin <azyobuzin@users.sourceforge.jp>", "Paul Woolcock <paul@woolcock.us>"]
+description = "Twitter API Client"
+documentation = "http://pwoolcoc.github.io/tweetust/tweetust/"
+repository = "https://github.com/pwoolcoc/tweetust"
 keywords = ["twitter", "tweet"]
-license = "MIT"
-exclude = ["clientgen/**/*", ".*"]
+license = "MIT/Apache-2.0"
+exclude = ["api/*", "./api"]
+build = "build.rs"
 
 [dependencies]
 hyper = "*"
 oauthcli = "*"
 rustc-serialize = "*"
 url = "*"
+
+[build-dependencies]
+clientgen = { path = "clientgen" }
